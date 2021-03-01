@@ -7,7 +7,7 @@ const StyledSpan = styled.span`
   margin-right: 5px;
   cursor: pointer;
   border-radius: 50%;
-  background: ${(props) => (props.active ? 'black' : 'white')};
+  background: ${props => (props.active ? 'black' : 'white')};
 `;
 
 const Dot = ({ active }) => <StyledSpan active={active} />;

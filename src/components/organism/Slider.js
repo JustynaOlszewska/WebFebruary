@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
-
+import styled from 'styled-components';
 import Slide from '../modules/SiderContent/Slide';
 import Arrow from '../modules/SiderContent/Arrow';
 import Dots from '../modules/SiderContent/Dots';
 import Text from '../modules/SiderContent/Text';
 import Buttons from '../modules/SiderContent/Buttons';
-import styled from 'styled-components';
 import school from '../../images/school.jpg';
-import cw1 from '../../images/cw1.jpg';
-import cw31 from '../../images/cw31.jpg';
-import gabkaprzem from '../../images/gabkaprzem.jpg';
 
 const StyledSlider = styled.div`
   position: relative;
@@ -18,14 +14,14 @@ const StyledSlider = styled.div`
   overflow: hidden;
 `;
 const StyledSliderContent = styled.div`
-  transform: translateX(-${(props) => props.translate + 'px'});
-  transition: transform ease-out ${(props) => props.transition + 's'};
+  transform: translateX(-${props => props.translate + 'px'});
+  transition: transform ease-out ${props => props.transition + 's'};
   height: 100%;
-  width: ${(props) => props.width}px;
+  width: ${props => props.width}px;
   display: flex;
 `;
 
-const images = [school, cw1, cw31, gabkaprzem];
+const images = [school, school, school, school];
 const Slider = () => {
   const [resize, setResize] = useState(window.innerWidth);
 

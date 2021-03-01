@@ -9,7 +9,7 @@ const StyledArrow = styled.div`
   display: flex;
   position: absolute;
   top: 50%;
-  ${(props) => (props.direction === 'right' ? `right: 25px` : `left: 25px`)};
+  ${props => (props.direction === 'right' ? `right: 25px` : `left: 25px`)};
   height: 50px;
   width: 50px;
   justify-content: center;
@@ -22,9 +22,7 @@ const StyledArrow = styled.div`
     transform: scale(1.1);
   }
   img {
-    transform: translateX(
-      ${(props) => (props.direction === 'left' ? '-2px' : '2px')}
-    );
+    transform: translateX(${props => (props.direction === 'left' ? '-2px' : '2px')});
     &:focus {
       outline: 0;
     }
