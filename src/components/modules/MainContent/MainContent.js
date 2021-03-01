@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 const StyledSection = styled.section`
   /* background-color: ${props => (props.name === 'forWhom' ? 'red' : 'yellow')}; */
 `;
 
 const MainContent = ({ element }) => {
+
   const { title, img, name, text, additionalText, additionalText2, list } = element;
+
   return (
     <StyledSection name={name}>
       <h1>{title}</h1>
@@ -15,12 +18,12 @@ const MainContent = ({ element }) => {
       {additionalText2 && additionalText2}
       {<ul>{list && list.map(element => <li key={element}>{element}</li>)}</ul>}
       {name !== 'withWho' ? (
-        <img src={img} alt={img} />
+        <img width='100px' height='auto' src={img} alt={img} />
       ) : (
-        <a href="!#">
-          <img src={img} alt={img} />
-        </a>
-      )}
+          <a href="!#">
+            <img width='100px' height='auto' src={img} alt={img} />
+          </a>
+        )}
     </StyledSection>
   );
 };
