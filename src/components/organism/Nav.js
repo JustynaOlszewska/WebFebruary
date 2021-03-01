@@ -1,8 +1,7 @@
 import React from 'react';
 import UWBialy from '../../images/UW-bialy.png';
 
-const Nav = () => {
-  return (
+const Nav = () => (
     <nav>
       <img src={UWBialy} alt="logo" />
       <ul>
@@ -14,6 +13,5 @@ const Nav = () => {
       </ul>
     </nav>
   );
-};
 
 export default Nav;

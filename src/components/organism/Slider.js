@@ -5,7 +5,7 @@ import Arrow from '../modules/SiderContent/Arrow';
 import Dots from '../modules/SiderContent/Dots';
 import Text from '../modules/SiderContent/Text';
 import Buttons from '../modules/SiderContent/Buttons';
-import school from '../../images/school.jpg';
+import { images } from '../../constant/imageToSlider';
 
 const StyledSlider = styled.div`
   position: relative;
@@ -13,6 +13,7 @@ const StyledSlider = styled.div`
   height: 100vh;
   overflow: hidden;
 `;
+
 const StyledSliderContent = styled.div`
   transform: translateX(-${props => props.translate + 'px'});
   transition: transform ease-out ${props => props.transition + 's'};
@@ -21,14 +22,15 @@ const StyledSliderContent = styled.div`
   display: flex;
 `;
 
-const images = [school, school, school, school];
 const Slider = () => {
+
   const [resize, setResize] = useState(window.innerWidth);
 
-  const getWidth = () => setResize(window.innerWidth);
+  // const getWidth = () => setResize(window.innerWidth);
 
   useEffect(() => {
-    getWidth();
+    setResize(window.innerWidth)
+    // getWidth();
   }, [resize]);
 
   const [state, setState] = useState({

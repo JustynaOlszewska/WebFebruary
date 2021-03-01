@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styled from 'styled-components';
 import arrowLeft from '../../../images/arrowLeft.png';
 import arrowRight from '../../../images/arrowRight.png';
@@ -20,17 +19,16 @@ const StyledArrow = styled.div`
   transition: transform ease-in 0.1s;
   &:hover {
     transform: scale(1.1);
-  }
+  };
   img {
     transform: translateX(${props => (props.direction === 'left' ? '-2px' : '2px')});
     &:focus {
       outline: 0;
-    }
-  }
+    };
+  };
 `;
 
-const Arrow = ({ direction, handleClick }) => {
-  return (
+const Arrow = ({ direction, handleClick }) => (
     <StyledArrow onClick={handleClick} direction={direction}>
       {direction === 'right' ? (
         <img src={arrowRight} alt="arrowRight" />
@@ -38,10 +36,11 @@ const Arrow = ({ direction, handleClick }) => {
         <img src={arrowLeft} alt="arrowLeft" />
       )}
     </StyledArrow>
-  );
-};
+);
+
 Arrow.propTypes = {
   direction: PropTypes.string.isRequired,
   handleClick: PropTypes.func,
 };
+
 export default Arrow;

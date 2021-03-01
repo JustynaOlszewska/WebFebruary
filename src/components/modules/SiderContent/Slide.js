@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 const StyledSlide = styled.div`
   /* background-image: url(${props => props.content}); */
-
   height: 'auto';
   width: ${props => props.imagesLength + '%'};
   width: 25%;
@@ -13,8 +12,7 @@ const StyledSlide = styled.div`
   background-repeat: no-repeat;
 `;
 
-const Slide = ({ content, imagesLength }) => {
-  return (
+const Slide = ({ content, imagesLength }) => (
     <StyledSlide
       style={{
         backgroundImage: `url(${content})`,
@@ -22,10 +20,11 @@ const Slide = ({ content, imagesLength }) => {
       content={content}
       imagesLength={100 / `${imagesLength}`}
     />
-  );
-};
+);
+
 Slide.propTypes = {
   content: PropTypes.string.isRequired,
   imagesLength: PropTypes.number.isRequired,
 };
+
 export default Slide;

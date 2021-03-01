@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-import Dot from '../../modules/SiderContent/Dot';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import Dot from '../../modules/SiderContent/Dot';
+
 const StyledDots = styled.div`
   position: absolute;
   bottom: 25px;
@@ -19,8 +19,10 @@ const Dots = ({ slides, activeIndex }) => (
     ))}
   </StyledDots>
 );
+
 Dots.propTypes = {
   slides: PropTypes.array.isRequired,
   activeIndex: PropTypes.number.isRequired,
 };
+
 export default Dots;
