@@ -7,7 +7,6 @@ const StyledSection = styled.section`
 `;
 
 const MainContent = ({ element }) => {
-
   const { title, img, name, text, additionalText, additionalText2, list } = element;
 
   return (
@@ -18,12 +17,12 @@ const MainContent = ({ element }) => {
       {additionalText2 && additionalText2}
       {<ul>{list && list.map(element => <li key={element}>{element}</li>)}</ul>}
       {name !== 'withWho' ? (
-        <img width='100px' height='auto' src={img} alt={img} />
+        <img width="100px" height="auto" src={img} alt={img} />
       ) : (
-          <a href="!#">
-            <img width='100px' height='auto' src={img} alt={img} />
-          </a>
-        )}
+        <a href="!#">
+          <img width="100px" height="auto" src={img} alt={img} />
+        </a>
+      )}
     </StyledSection>
   );
 };
