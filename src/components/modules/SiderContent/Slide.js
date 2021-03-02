@@ -13,13 +13,13 @@ const StyledSlide = styled.div`
 `;
 
 const Slide = ({ content, imagesLength }) => (
-    <StyledSlide
-      style={{
-        backgroundImage: `url(${content})`,
-      }}
-      content={content}
-      imagesLength={100 / `${imagesLength}`}
-    />
+  <StyledSlide
+    style={{
+      backgroundImage: `url(${content})`,
+    }}
+    content={content}
+    imagesLength={100 / `${imagesLength}`}
+  />
 );
 
 Slide.propTypes = {

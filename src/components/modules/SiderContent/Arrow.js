@@ -19,23 +19,23 @@ const StyledArrow = styled.div`
   transition: transform ease-in 0.1s;
   &:hover {
     transform: scale(1.1);
-  };
+  }
   img {
     transform: translateX(${props => (props.direction === 'left' ? '-2px' : '2px')});
     &:focus {
       outline: 0;
-    };
-  };
+    }
+  }
 `;
 
 const Arrow = ({ direction, handleClick }) => (
-    <StyledArrow onClick={handleClick} direction={direction}>
-      {direction === 'right' ? (
-        <img src={arrowRight} alt="arrowRight" />
-      ) : (
-        <img src={arrowLeft} alt="arrowLeft" />
-      )}
-    </StyledArrow>
+  <StyledArrow onClick={handleClick} direction={direction}>
+    {direction === 'right' ? (
+      <img src={arrowRight} alt="arrowRight" />
+    ) : (
+      <img src={arrowLeft} alt="arrowLeft" />
+    )}
+  </StyledArrow>
 );
 
 Arrow.propTypes = {

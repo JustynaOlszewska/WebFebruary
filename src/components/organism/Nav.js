@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Bars from '../modules/NavContent/Bars';
+import List from '../modules/NavContent/List';
 import UWBialy from '../../images/UW-bialy.png';
+import {
+  StyledNav,
+  StyledLogo,
+} from '../../styles/styleComponents/StyleNav/StyledNav';
 
-const Nav = () => (
-    <nav>
-      <img src={UWBialy} alt="logo" />
-      <ul>
-        <li>I stopnia</li>
-        <li>II stopnia</li>
-        <li>Podyplomowe</li>
-        <li>Szkolenia</li>
-        <li>Usługi</li>
-      </ul>
-    </nav>
+const Nav = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  return (
+    <StyledNav>
+      <StyledLogo src={UWBialy} alt="logo" />
+      <Bars handleClick={handleClick} open={open} />
+      <List open={open} />
+    </StyledNav>
   );
+};
 
 export default Nav;

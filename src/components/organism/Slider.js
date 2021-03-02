@@ -23,13 +23,12 @@ const StyledSliderContent = styled.div`
 `;
 
 const Slider = () => {
-
   const [resize, setResize] = useState(window.innerWidth);
 
   // const getWidth = () => setResize(window.innerWidth);
 
   useEffect(() => {
-    setResize(window.innerWidth)
+    setResize(window.innerWidth);
     // getWidth();
   }, [resize]);
 

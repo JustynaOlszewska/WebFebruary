@@ -1,14 +1,10 @@
-const initialState = {
-
-};
+const initialState = {};
 
 export default (state, action) => {
+  switch (action.type) {
+    case value:
 
-    switch (action.type) {
-        case value:
-
-        default:
-            return state;
-
-    };
+    default:
+      return state;
+  }
 };
