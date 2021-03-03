@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { navList } from '../../../constant/navList';
 import {
@@ -6,9 +7,9 @@ import {
   StyledUl,
 } from '../../../styles/styleComponents/StyleNav/StyledList';
 
-const List = ({ open }) => {
+const List = ({ nav }) => {
   return (
-    <StyledUl open={open}>
+    <StyledUl open={nav.open}>
       {navList.map(element => (
         <StyledLi key={element}>{element}</StyledLi>
       ))}
@@ -17,7 +18,11 @@ const List = ({ open }) => {
 };
 
 List.propTypes = {
-  open: PropTypes.bool.isRequired,
+  nav: PropTypes.bool.isRequired,
 };
 
-export default List;
+const mapStateToProps = state => ({
+  nav: state.navReducer,
+});
+
+export default connect(mapStateToProps)(List);
