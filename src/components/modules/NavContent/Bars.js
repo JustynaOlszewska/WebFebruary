@@ -1,11 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { setOpen } from '../../../actions/navActions';
 import {
   StyledIconBars,
   StyledIconTimes,
 } from '../../../styles/styleComponents/StyleNav/StyledBars';
 
-const Bars = ({ handleClick, open }) => {
+const Bars = ({ nav: { open }, setOpen }) => {
+
+  const handleClick = () => {
+    setOpen();
+  };
+
   return (
     <>
       <StyledIconBars
@@ -23,8 +30,12 @@ const Bars = ({ handleClick, open }) => {
 };
 
 Bars.propTypes = {
-  handleClick: PropTypes.func,
-  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func,
+  nav: PropTypes.bool.isRequired,
 };
 
-export default Bars;
+const mapStateToProps = state => ({
+  nav: state.navReducer
+});
+
+export default connect(mapStateToProps,{ setOpen } )(Bars);

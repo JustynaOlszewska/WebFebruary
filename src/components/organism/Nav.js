@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Bars from '../modules/NavContent/Bars';
 import List from '../modules/NavContent/List';
 import UWBialy from '../../images/UW-bialy.png';
@@ -8,19 +8,14 @@ import {
 } from '../../styles/styleComponents/StyleNav/StyledNav';
 
 const Nav = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
 
   return (
     <StyledNav>
       <StyledLogo src={UWBialy} alt="logo" />
-      <Bars handleClick={handleClick} open={open} />
-      <List open={open} />
+      <Bars />
+      <List />
     </StyledNav>
   );
 };
 
-export default Nav;
+export default (Nav);
