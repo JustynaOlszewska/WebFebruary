@@ -7,9 +7,9 @@ import {
   StyledUl,
 } from '../../../styles/styleComponents/StyleNav/StyledList';
 
-const List = ({ nav }) => {
+const List = ({ nav: { open } }) => {
   return (
-    <StyledUl open={nav.open}>
+    <StyledUl open={open}>
       {navList.map(element => (
         <StyledLi key={element}>{element}</StyledLi>
       ))}
@@ -18,7 +18,7 @@ const List = ({ nav }) => {
 };
 
 List.propTypes = {
-  nav: PropTypes.bool.isRequired,
+  nav: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({

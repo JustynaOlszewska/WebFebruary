@@ -31,11 +31,11 @@ const Bars = ({ nav: { open }, setOpen }) => {
 
 Bars.propTypes = {
   setOpen: PropTypes.func,
-  nav: PropTypes.bool.isRequired,
+  nav: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
   nav: state.navReducer
 });
 
-export default connect(mapStateToProps,{ setOpen } )(Bars);
+export default connect(mapStateToProps, { setOpen })(Bars);

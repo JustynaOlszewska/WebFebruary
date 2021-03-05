@@ -9,9 +9,20 @@ import { images } from '../../constant/imageToSlider';
 
 const StyledSlider = styled.div`
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  max-width: 1600px;
+  left: 50%;
+  transform: translate(-50%);
+  height: 30vh;
+  color: #fff;
   overflow: hidden;
+   @media(min-width:424px ) {
+    height:40vh;
+  };
+  @media(min-width:767px ) {
+    height: 100vh;
+  };
+ 
 `;
 
 const StyledSliderContent = styled.div`
@@ -25,11 +36,8 @@ const StyledSliderContent = styled.div`
 const Slider = () => {
   const [resize, setResize] = useState(window.innerWidth);
 
-  // const getWidth = () => setResize(window.innerWidth);
-
   useEffect(() => {
     setResize(window.innerWidth);
-    // getWidth();
   }, [resize]);
 
   const [state, setState] = useState({
@@ -82,7 +90,6 @@ const Slider = () => {
         {images.map((slide, i) => (
           <Slide key={slide + i} content={slide} imagesLength={images.length} />
         ))}
-        <p>{resize}</p>
       </StyledSliderContent>
       <Text />
       <Buttons />

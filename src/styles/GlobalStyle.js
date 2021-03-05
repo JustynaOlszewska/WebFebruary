@@ -38,7 +38,8 @@ ${normalize};
 
 @font-face {
     font-family: "Muli-ExtraLight";
-    src: url(${muliExtraLight}) format("ttf");
+    src: url(${muliExtraLight}) format("truetype");
+    
   };
 
 @font-face {
@@ -77,7 +78,6 @@ ${normalize};
   };
 
 body {
-    background-color: red;
     width: 100%;
     min-height: 100vh;
     font-size: 16px;

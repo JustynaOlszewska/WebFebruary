@@ -7,33 +7,44 @@ import arrowRight from '../../../images/arrowRight.png';
 const StyledArrow = styled.div`
   display: flex;
   position: absolute;
-  top: 50%;
-  ${props => (props.direction === 'right' ? `right: 25px` : `left: 25px`)};
-  height: 50px;
-  width: 50px;
-  justify-content: center;
-  background: white;
-  border-radius: 50%;
+  width: 73%;
+  bottom: 24%;
+  transform: translateX(-50%);
+  left: ${props => (props.direction === 'right' ? `53%` : `49%`)};
   cursor: pointer;
-  align-items: center;
-  transition: transform ease-in 0.1s;
-  &:hover {
-    transform: scale(1.1);
-  }
-  img {
-    transform: translateX(${props => (props.direction === 'left' ? '-2px' : '2px')});
-    &:focus {
-      outline: 0;
-    }
-  }
+  @media(min-width: 767px) {
+    left: ${props => (props.direction === 'right' ? `54%` : `49%`)};
+    bottom: 5%;
+
+    };
+  @media(min-width: 1024px) {
+    left: ${props => (props.direction === 'right' ? `54%` : `49%`)};
+    };
+    @media(min-width: 1400px) {
+    left: ${props => (props.direction === 'right' ? `52%` : `49%`)};
+    bottom: 14%;
+
+    };
+`;
+
+const StyledImgRight = styled.img`
+  width: 11px;
+  color: #fff;
+  @media(min-width: 767px) {
+    width: 31px;
+    };
+`;
+
+const StyledImgLeft = styled(StyledImgRight)`
+  transform: rotate(180deg);    
 `;
 
 const Arrow = ({ direction, handleClick }) => (
   <StyledArrow onClick={handleClick} direction={direction}>
     {direction === 'right' ? (
-      <img src={arrowRight} alt="arrowRight" />
+      <StyledImgRight src={arrowRight} alt='arrowRight' />
     ) : (
-      <img src={arrowLeft} alt="arrowLeft" />
+      <StyledImgLeft src={arrowLeft} alt='arrowLeft' />
     )}
   </StyledArrow>
 );

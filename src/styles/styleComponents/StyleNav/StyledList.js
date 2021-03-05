@@ -15,7 +15,7 @@ export const StyledUl = styled.ul`
     right: 0;
     background-color: #3b3a30;
     opacity: 0.7;
-    transform: ${props => (props.open ? `translateX(0)` : `translateX(150%)`)};
+    transform: ${({ open }) => (open ? `translateX(0)` : `translateX(150%)`)};
     transition: transform 3s;
   }
 
