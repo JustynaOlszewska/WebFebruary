@@ -5,7 +5,7 @@ import Nav from './components/organism/Nav';
 import Slider from './components/organism/Slider';
 import Main from './components/organism/Main';
 
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
       <>
@@ -15,6 +15,6 @@ function App() {
       </>
     </Provider>
   );
-}
+};
 
 export default App;

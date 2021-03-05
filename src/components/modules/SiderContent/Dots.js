@@ -5,17 +5,20 @@ import Dot from '../../modules/SiderContent/Dot';
 
 const StyledDots = styled.div`
   position: absolute;
-  bottom: 25px;
-  width: 100%;
+  height: 15%;
+  top: 41%;
+  right: 0;
+  width: 13%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 const Dots = ({ slides, activeIndex }) => (
   <StyledDots>
     {slides.map((slide, i) => (
-      <Dot key={slide} active={activeIndex === i} />
+      <Dot key={slide + i} active={activeIndex === i} />
     ))}
   </StyledDots>
 );

@@ -11,7 +11,6 @@ export default (state = initiaState, action) => {
                 ...state,
                 open: !state.open,
             };
-
         default:
             return state;
     }
